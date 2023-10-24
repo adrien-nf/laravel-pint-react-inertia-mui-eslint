@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, FormEventHandler } from "react";
 import { Head, useForm } from "@inertiajs/react";
-import { Button, TextField } from "@mui/material";
-import CenteredBox from "../../Components/CenteredBox/CenteredBox";
+import { Button, Stack, TextField } from "@mui/material";
+import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function ConfirmPassword() {
 	const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,7 +31,7 @@ export default function ConfirmPassword() {
 				</div>
 
 				<form onSubmit={submit}>
-					<div>
+					<Stack gap={2}>
 						<TextField
 							label="New password"
 							type="password"
@@ -43,13 +43,11 @@ export default function ConfirmPassword() {
 							error={!!errors.password}
 							helperText={errors.password}
 						/>
-					</div>
 
-					<div>
 						<Button disabled={processing}>
 							Confirm
 						</Button>
-					</div>
+					</Stack>
 				</form>
 			</CenteredBox>
 		</>

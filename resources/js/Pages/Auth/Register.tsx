@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, FormEventHandler } from "react";
 import { Head, Link, useForm } from "@inertiajs/react";
-import { Button, TextField } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function Register() {
@@ -30,7 +30,7 @@ export default function Register() {
 
 			<CenteredBox>
 				<form onSubmit={submit}>
-					<div>
+					<Stack gap={2}>
 						<TextField
 							label="Name"
 							type="name"
@@ -42,9 +42,7 @@ export default function Register() {
 							error={!!errors.name}
 							helperText={errors.name}
 						/>
-					</div>
 
-					<div>
 						<TextField
 							label="Email"
 							type="email"
@@ -56,9 +54,7 @@ export default function Register() {
 							error={!!errors.email}
 							helperText={errors.email}
 						/>
-					</div>
 
-					<div>
 						<TextField
 							label="New password"
 							type="password"
@@ -70,9 +66,7 @@ export default function Register() {
 							error={!!errors.password}
 							helperText={errors.password}
 						/>
-					</div>
 
-					<div>
 						<TextField
 							label="New password"
 							type="password"
@@ -84,9 +78,7 @@ export default function Register() {
 							error={!!errors.password_confirmation}
 							helperText={errors.password_confirmation}
 						/>
-					</div>
 
-					<div>
 						<Link
 							href={route("login")}
 							className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
@@ -97,7 +89,7 @@ export default function Register() {
 						<Button type="submit" disabled={processing}>
 							Register
 						</Button>
-					</div>
+					</Stack>
 				</form>
 			</CenteredBox>
 		</>

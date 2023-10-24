@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
 
 export default function CenteredBox(props: {
 	children: React.ReactNode
@@ -11,7 +11,9 @@ export default function CenteredBox(props: {
 			alignItems: "center",
 			height: "90vh"
 		}}>
-			{props.children}
+			<Paper sx={{ padding: 2 }}>
+				{props.children}
+			</Paper>
 		</Stack>
 	);
 }

@@ -32,59 +32,51 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 
 				<form onSubmit={submit}>
 					<Stack gap={2}>
-						<div>
-							<TextField
-								label="Email"
-								type="email"
-								name="email"
-								variant="outlined"
-								autoComplete="email"
-								value={data.email}
-								onChange={(e) => setData("email", e.target.value)}
-								error={!!errors.email}
-								helperText={errors.email}
+						<TextField
+							label="Email"
+							type="email"
+							name="email"
+							variant="outlined"
+							autoComplete="email"
+							value={data.email}
+							onChange={(e) => setData("email", e.target.value)}
+							error={!!errors.email}
+							helperText={errors.email}
+						/>
+
+						<TextField
+							label="Password"
+							type="password"
+							name="password"
+							variant="outlined"
+							autoComplete="password"
+							value={data.password}
+							onChange={(e) => setData("password", e.target.value)}
+							error={!!errors.password}
+							helperText={errors.password}
+						/>
+
+						<label>
+							<Checkbox
+								name="remember"
+								checked={data.remember}
+								onChange={(e) => setData("remember", e.target.checked)}
 							/>
-						</div>
+							<span>Remember me</span>
+						</label>
 
-						<div>
-							<TextField
-								label="Password"
-								type="password"
-								name="password"
-								variant="outlined"
-								autoComplete="password"
-								value={data.password}
-								onChange={(e) => setData("password", e.target.value)}
-								error={!!errors.password}
-								helperText={errors.password}
-							/>
-						</div>
+						{canResetPassword && (
+							<Link
+								href={route("password.request")}
+								className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+							>
+								Forgot your password?
+							</Link>
+						)}
 
-						<div>
-							<label>
-								<Checkbox
-									name="remember"
-									checked={data.remember}
-									onChange={(e) => setData("remember", e.target.checked)}
-								/>
-								<span>Remember me</span>
-							</label>
-						</div>
-
-						<div>
-							{canResetPassword && (
-								<Link
-									href={route("password.request")}
-									className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-								>
-									Forgot your password?
-								</Link>
-							)}
-
-							<Button type="submit" disabled={processing}>
-								Log in
-							</Button>
-						</div>
+						<Button type="submit" disabled={processing}>
+							Log in
+						</Button>
 					</Stack>
 				</form>
 			</CenteredBox>

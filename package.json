@@ -4,7 +4,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build && vite build --ssr",
-		"lint": "npx eslint ./resources/js/"
+		"lint": "npx eslint ./resources/js/",
+		"lint-fix": "npx eslint ./resources/js/ --fix"
 	},
 	"devDependencies": {
 		"@headlessui/react": "^1.4.2",
