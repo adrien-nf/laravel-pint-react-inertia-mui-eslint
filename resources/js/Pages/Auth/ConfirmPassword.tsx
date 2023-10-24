@@ -26,12 +26,12 @@ export default function ConfirmPassword() {
 			<Head title="Confirm Password" />
 
 			<CenteredBox>
-				<div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+				<div>
 					This is a secure area of the application. Please confirm your password before continuing.
 				</div>
 
 				<form onSubmit={submit}>
-					<div className="mt-4">
+					<div>
 						<TextField
 							label="New password"
 							type="password"
@@ -45,8 +45,8 @@ export default function ConfirmPassword() {
 						/>
 					</div>
 
-					<div className="flex items-center justify-end mt-4">
-						<Button className="ml-4" disabled={processing}>
+					<div>
+						<Button disabled={processing}>
 							Confirm
 						</Button>
 					</div>

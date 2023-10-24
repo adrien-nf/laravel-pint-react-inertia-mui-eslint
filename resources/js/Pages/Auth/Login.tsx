@@ -81,7 +81,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 								</Link>
 							)}
 
-							<Button type="submit" className="ml-4" disabled={processing}>
+							<Button type="submit" disabled={processing}>
 								Log in
 							</Button>
 						</div>

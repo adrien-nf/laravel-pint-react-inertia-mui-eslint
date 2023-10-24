@@ -22,14 +22,14 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
 	return (
 		<section className={className}>
 			<header>
-				<h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">Profile Information</h2>
+				<h2>Profile Information</h2>
 
-				<p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+				<p>
 					Update your account&apos;s profile information and email address.
 				</p>
 			</header>
 
-			<form onSubmit={submit} className="mt-6 space-y-6">
+			<form onSubmit={submit}>
 				<div>
 					<TextField
 						label="Name"
@@ -60,7 +60,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
 
 				{mustVerifyEmail && user.email_verified_at === null && (
 					<div>
-						<p className="text-sm mt-2 text-gray-800 dark:text-gray-200">
+						<p>
 							Your email address is unverified.
 							<Link
 								href={route("verification.send")}
@@ -73,14 +73,14 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
 						</p>
 
 						{status === "verification-link-sent" && (
-							<div className="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
+							<div>
 								A new verification link has been sent to your email address.
 							</div>
 						)}
 					</div>
 				)}
 
-				<div className="flex items-center gap-4">
+				<div>
 					<Button type="submit" disabled={processing}>Save</Button>
 
 					<Transition
@@ -90,7 +90,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
 						leave="transition ease-in-out"
 						leaveTo="opacity-0"
 					>
-						<p className="text-sm text-gray-600 dark:text-gray-400">Saved.</p>
+						<p>Saved.</p>
 					</Transition>
 				</div>
 			</form>

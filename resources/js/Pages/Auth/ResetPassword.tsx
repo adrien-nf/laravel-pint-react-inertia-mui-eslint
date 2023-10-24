@@ -42,7 +42,7 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 					/>
 				</div>
 
-				<div className="mt-4">
+				<div>
 					<TextField
 						label="New password"
 						type="password"
@@ -56,7 +56,7 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 					/>
 				</div>
 
-				<div className="mt-4">
+				<div>
 					<TextField
 						label="New password"
 						type="password"
@@ -70,8 +70,8 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 					/>
 				</div>
 
-				<div className="flex items-center justify-end mt-4">
-					<Button type="submit" className="ml-4" disabled={processing}>
+				<div>
+					<Button type="submit" disabled={processing}>
 						Reset Password
 					</Button>
 				</div>

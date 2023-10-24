@@ -44,7 +44,7 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className="mt-4">
+					<div>
 						<TextField
 							label="Email"
 							type="email"
@@ -58,7 +58,7 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className="mt-4">
+					<div>
 						<TextField
 							label="New password"
 							type="password"
@@ -72,7 +72,7 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className="mt-4">
+					<div>
 						<TextField
 							label="New password"
 							type="password"
@@ -86,7 +86,7 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className="flex items-center justify-end mt-4">
+					<div>
 						<Link
 							href={route("login")}
 							className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
@@ -94,7 +94,7 @@ export default function Register() {
 							Already registered?
 						</Link>
 
-						<Button type="submit" className="ml-4" disabled={processing}>
+						<Button type="submit" disabled={processing}>
 							Register
 						</Button>
 					</div>
