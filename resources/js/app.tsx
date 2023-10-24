@@ -19,7 +19,8 @@ createInertiaApp({
 	resolve: name => {
 		const pages = import.meta.glob("./Pages/**/*.tsx", { eager: true });
 		const page = pages[`./Pages/${name}.tsx`];
-		page.default.layout = page.default.layout || (page => <AppLayout>{page}</AppLayout>);
+		// @ts-expect-error Page is unknown
+		page.default.layout = page.default.layout || ((page: React.ReactNode) => <AppLayout>{page}</AppLayout>);
 		return page;
 	}, setup({ el, App, props }) {
 		const root = createRoot(el);
