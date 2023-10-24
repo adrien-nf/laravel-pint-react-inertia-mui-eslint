@@ -1,8 +1,9 @@
-import { useRef, useState, FormEventHandler } from 'react';
-import { useForm } from '@inertiajs/react';
-import { Button, Modal, InputLabel, TextField } from '@mui/material';
+import React from "react";
+import { useRef, useState, FormEventHandler } from "react";
+import { useForm } from "@inertiajs/react";
+import { Button, Modal, TextField } from "@mui/material";
 
-export default function DeleteUserForm({ className = '' }: { className?: string }) {
+export default function DeleteUserForm({ className = "" }: { className?: string }) {
 	const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
 	const passwordInput = useRef<HTMLInputElement>();
 
@@ -14,7 +15,7 @@ export default function DeleteUserForm({ className = '' }: { className?: string 
 		reset,
 		errors,
 	} = useForm({
-		password: '',
+		password: "",
 	});
 
 	const confirmUserDeletion = () => {
@@ -24,7 +25,7 @@ export default function DeleteUserForm({ className = '' }: { className?: string 
 	const deleteUser: FormEventHandler = (e) => {
 		e.preventDefault();
 
-		destroy(route('profile.destroy'), {
+		destroy(route("profile.destroy"), {
 			preserveScroll: true,
 			onSuccess: () => closeModal(),
 			onError: () => passwordInput.current?.focus(),
@@ -70,7 +71,7 @@ export default function DeleteUserForm({ className = '' }: { className?: string 
 							variant="outlined"
 							autoComplete="password"
 							value={data.password}
-							onChange={(e) => setData('password', e.target.value)}
+							onChange={(e) => setData("password", e.target.value)}
 							error={!!errors.password}
 							helperText={errors.password}
 						/>

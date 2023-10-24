@@ -1,26 +1,27 @@
-import { useEffect, FormEventHandler } from 'react';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { Button, TextField } from '@mui/material';
-import CenteredBox from '@/Components/CenteredBox/CenteredBox';
+import React from "react";
+import { useEffect, FormEventHandler } from "react";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { Button, TextField } from "@mui/material";
+import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function Register() {
 	const { data, setData, post, processing, errors, reset } = useForm({
-		name: '',
-		email: '',
-		password: '',
-		password_confirmation: '',
+		name: "",
+		email: "",
+		password: "",
+		password_confirmation: "",
 	});
 
 	useEffect(() => {
 		return () => {
-			reset('password', 'password_confirmation');
+			reset("password", "password_confirmation");
 		};
 	}, []);
 
 	const submit: FormEventHandler = (e) => {
 		e.preventDefault();
 
-		post(route('register'));
+		post(route("register"));
 	};
 
 	return (
@@ -37,7 +38,7 @@ export default function Register() {
 							variant="outlined"
 							autoComplete="name"
 							value={data.name}
-							onChange={(e) => setData('name', e.target.value)}
+							onChange={(e) => setData("name", e.target.value)}
 							error={!!errors.name}
 							helperText={errors.name}
 						/>
@@ -51,7 +52,7 @@ export default function Register() {
 							variant="outlined"
 							autoComplete="email"
 							value={data.email}
-							onChange={(e) => setData('email', e.target.value)}
+							onChange={(e) => setData("email", e.target.value)}
 							error={!!errors.email}
 							helperText={errors.email}
 						/>
@@ -65,7 +66,7 @@ export default function Register() {
 							variant="outlined"
 							autoComplete="new-password"
 							value={data.password}
-							onChange={(e) => setData('password', e.target.value)}
+							onChange={(e) => setData("password", e.target.value)}
 							error={!!errors.password}
 							helperText={errors.password}
 						/>
@@ -79,7 +80,7 @@ export default function Register() {
 							variant="outlined"
 							autoComplete="new-password"
 							value={data.password_confirmation}
-							onChange={(e) => setData('password_confirmation', e.target.value)}
+							onChange={(e) => setData("password_confirmation", e.target.value)}
 							error={!!errors.password_confirmation}
 							helperText={errors.password_confirmation}
 						/>
@@ -87,7 +88,7 @@ export default function Register() {
 
 					<div className="flex items-center justify-end mt-4">
 						<Link
-							href={route('login')}
+							href={route("login")}
 							className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
 						>
 							Already registered?

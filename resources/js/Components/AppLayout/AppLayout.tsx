@@ -1,10 +1,11 @@
-import { CssBaseline } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Header from '@/Components/Header/Header';
+import React from "react";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Header from "@/Components/Header/Header";
 
 const darkTheme = createTheme({
 	palette: {
-		mode: 'dark',
+		mode: "dark",
 	},
 });
 

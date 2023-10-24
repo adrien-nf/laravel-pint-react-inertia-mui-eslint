@@ -1,3 +1,4 @@
+import React from "react";
 import { Stack } from "@mui/material";
 
 export default function CenteredBox(props: {
@@ -12,5 +13,5 @@ export default function CenteredBox(props: {
 		}}>
 			{props.children}
 		</Stack>
-	)
+	);
 }

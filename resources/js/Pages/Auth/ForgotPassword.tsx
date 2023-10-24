@@ -1,16 +1,17 @@
-import { Head, useForm } from '@inertiajs/react';
-import { TextField, Button } from '@mui/material';
-import { FormEventHandler } from 'react';
+import React from "react";
+import { Head, useForm } from "@inertiajs/react";
+import { TextField, Button } from "@mui/material";
+import { FormEventHandler } from "react";
 
 export default function ForgotPassword({ status }: { status?: string }) {
 	const { data, setData, post, processing, errors } = useForm({
-		email: '',
+		email: "",
 	});
 
 	const submit: FormEventHandler = (e) => {
 		e.preventDefault();
 
-		post(route('password.email'));
+		post(route("password.email"));
 	};
 
 	return (
@@ -32,7 +33,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
 					variant="outlined"
 					autoComplete="email"
 					value={data.email}
-					onChange={(e) => setData('email', e.target.value)}
+					onChange={(e) => setData("email", e.target.value)}
 					error={!!errors.email}
 					helperText={errors.email}
 				/>

@@ -1,25 +1,26 @@
-import { useEffect, FormEventHandler } from 'react';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { Checkbox, Button, TextField, Alert, Stack } from '@mui/material';
-import CenteredBox from '@/Components/CenteredBox/CenteredBox';
+import React from "react";
+import { useEffect, FormEventHandler } from "react";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { Checkbox, Button, TextField, Alert, Stack } from "@mui/material";
+import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function Login({ status, canResetPassword }: { status?: string, canResetPassword: boolean }) {
 	const { data, setData, post, processing, errors, reset } = useForm({
-		email: '',
-		password: '',
+		email: "",
+		password: "",
 		remember: false,
 	});
 
 	useEffect(() => {
 		return () => {
-			reset('password');
+			reset("password");
 		};
 	}, []);
 
 	const submit: FormEventHandler = (e) => {
 		e.preventDefault();
 
-		post(route('login'));
+		post(route("login"));
 	};
 
 	return (
@@ -39,7 +40,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 								variant="outlined"
 								autoComplete="email"
 								value={data.email}
-								onChange={(e) => setData('email', e.target.value)}
+								onChange={(e) => setData("email", e.target.value)}
 								error={!!errors.email}
 								helperText={errors.email}
 							/>
@@ -53,7 +54,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 								variant="outlined"
 								autoComplete="password"
 								value={data.password}
-								onChange={(e) => setData('password', e.target.value)}
+								onChange={(e) => setData("password", e.target.value)}
 								error={!!errors.password}
 								helperText={errors.password}
 							/>
@@ -64,7 +65,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 								<Checkbox
 									name="remember"
 									checked={data.remember}
-									onChange={(e) => setData('remember', e.target.checked)}
+									onChange={(e) => setData("remember", e.target.checked)}
 								/>
 								<span>Remember me</span>
 							</label>
@@ -73,7 +74,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 						<div>
 							{canResetPassword && (
 								<Link
-									href={route('password.request')}
+									href={route("password.request")}
 									className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
 								>
 									Forgot your password?

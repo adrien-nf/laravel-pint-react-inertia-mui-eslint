@@ -1,25 +1,26 @@
-import { useEffect, FormEventHandler } from 'react';
-import { Head, useForm } from '@inertiajs/react';
-import { Button, TextField } from '@mui/material';
+import React from "react";
+import { useEffect, FormEventHandler } from "react";
+import { Head, useForm } from "@inertiajs/react";
+import { Button, TextField } from "@mui/material";
 
 export default function ResetPassword({ token, email }: { token: string, email: string }) {
 	const { data, setData, post, processing, errors, reset } = useForm({
 		token: token,
 		email: email,
-		password: '',
-		password_confirmation: '',
+		password: "",
+		password_confirmation: "",
 	});
 
 	useEffect(() => {
 		return () => {
-			reset('password', 'password_confirmation');
+			reset("password", "password_confirmation");
 		};
 	}, []);
 
 	const submit: FormEventHandler = (e) => {
 		e.preventDefault();
 
-		post(route('password.store'));
+		post(route("password.store"));
 	};
 
 	return (
@@ -35,7 +36,7 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 						variant="outlined"
 						autoComplete="email"
 						value={data.email}
-						onChange={(e) => setData('email', e.target.value)}
+						onChange={(e) => setData("email", e.target.value)}
 						error={!!errors.email}
 						helperText={errors.email}
 					/>
@@ -49,7 +50,7 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 						variant="outlined"
 						autoComplete="new-password"
 						value={data.password}
-						onChange={(e) => setData('password', e.target.value)}
+						onChange={(e) => setData("password", e.target.value)}
 						error={!!errors.password}
 						helperText={errors.password}
 					/>
@@ -63,7 +64,7 @@ export default function ResetPassword({ token, email }: { token: string, email: 
 						variant="outlined"
 						autoComplete="new-password"
 						value={data.password_confirmation}
-						onChange={(e) => setData('password_confirmation', e.target.value)}
+						onChange={(e) => setData("password_confirmation", e.target.value)}
 						error={!!errors.password_confirmation}
 						helperText={errors.password_confirmation}
 					/>

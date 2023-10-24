@@ -1,6 +1,7 @@
-import { Head } from '@inertiajs/react';
-import { Typography } from '@mui/material';
-import CenteredBox from '@/Components/CenteredBox/CenteredBox';
+import React from "react";
+import { Head } from "@inertiajs/react";
+import { Typography } from "@mui/material";
+import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function Dashboard() {
 	return (
@@ -8,7 +9,7 @@ export default function Dashboard() {
 			<Head title="Dashboard" />
 
 			<CenteredBox>
-				<Typography>You're logged in!</Typography>
+				<Typography>You&apos;re logged in!</Typography>
 			</CenteredBox>
 		</>
 	);

@@ -1,4 +1,5 @@
-import { Head } from '@inertiajs/react';
+import React from "react";
+import { Head } from "@inertiajs/react";
 import CenteredBox from "@/Components/CenteredBox/CenteredBox";
 
 export default function Welcome() {
